@@ -110,12 +110,40 @@
     </div>
   </div>
 
+
   <footer class="footer_section">
     <div class="">
       <p>&copy; AlmagroDev - Todos los derechos reservados.</p>
     </div>
   </footer>
 
+  <script>
+    // Obtener todos los enlaces de las imágenes que abren los modales
+    const imageLinks = document.querySelectorAll('.image-table a');
+    
+    // Función para abrir el modal
+    function openModal(event) {
+      event.preventDefault();
+      const modalId = this.getAttribute('href');
+      const modal = document.querySelector(modalId);
+      modal.classList.add('active'); // Mostrar el modal
+    }
+  
+    // Función para cerrar el modal
+    function closeModal(event) {
+      event.preventDefault();
+      const modal = this.closest('.modal');
+      modal.classList.remove('active'); // Ocultar el modal
+    }
+  
+    // Agregar el evento para abrir los modales al hacer click en las imágenes
+    imageLinks.forEach(link => link.addEventListener('click', openModal));
+  
+    // Agregar el evento para cerrar los modales al hacer click en el botón de cerrar
+    const closeButtons = document.querySelectorAll('.modal-close');
+    closeButtons.forEach(button => button.addEventListener('click', closeModal));
+  </script>
+  
   <!-- Scripts necesarios para el menú desplegable de Bootstrap -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
