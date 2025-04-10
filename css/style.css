@@ -250,13 +250,13 @@ body {
 
 @media (max-width: 768px) {
     .contact_links_section h3 {
-        font-size: 30px;
+        font-size: 70px;
     }
     .contact_links {
         flex-direction: column;
     }
     .contact_link i {
-        font-size: 50px;
+        font-size: 60px;
     }
 }
 
