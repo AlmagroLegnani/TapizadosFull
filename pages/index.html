@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    
+    <!-- SEO Meta Tags -->
+     <meta name="google-site-verification" content="googled94fcec347c9ce65" />
+
+    <meta name="keywords" content="limpieza de tapizados, limpieza profesional, tapicería, limpieza de muebles, restauración tapizados, limpieza de telas" />
+    <meta name="description" content="Empresa especializada en la limpieza y mantenimiento de tapizados, brindando servicios de calidad para todo tipo de telas y superficies. Transformamos tus tapizados con tecnología avanzada." />
+    <meta name="author" content="TapizadosFULL" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="TapizadosFULL - Limpieza y Restauración Profesional de Tapizados" />
+    <meta property="og:description" content="Ofrecemos limpieza y restauración de tapizados con equipos profesionales. Servicios garantizados para todo tipo de tejidos." />
+    <meta property="og:image" content="path/to/your-image.jpg" />
+    <meta property="og:url" content="https://www.tapizadosfull.com" />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:title" content="TapizadosFULL - Limpieza Profesional de Tapizados" />
+    <meta name="twitter:description" content="Limpieza y restauración profesional de tapizados con garantía de calidad y satisfacción." />
+    <meta name="twitter:image" content="path/to/your-image.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <title>TapizadosFULL</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <style>
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1050;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .modal.active {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-dialog {
+            position: relative;
+            left: 17px;;
+            pointer-events: none;
+        }
+
+        .modal.active .modal-dialog {
+            transform: none;
+        }
+
+        .modal-content {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            pointer-events: auto;
+            background-color: #343a40;
+            color: white;
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            border-radius: 0.3rem;
+            outline: 0;
+        }
+
+        .modal-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            padding: 1rem;
+            border-bottom: 1px solid #6c757d;
+            border-radius: 0.3rem 0.3rem 0 0;
+        }
+
+        .modal-title {
+            margin-bottom: 0;
+            line-height: 1.5;
+        }
+
+        .modal-close {
+            padding: 0;
+            cursor: pointer;
+            background: transparent;
+            border: 0;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            line-height: 1.5;
+            color: #fff;
+            opacity: 0.7;
+        }
+
+        .modal-close:hover {
+            opacity: 1;
+        }
+
+        .modal-body {
+            position: relative;
+            padding: 1rem;
+        }
+
+        .modal-dialog-centered {
+            display: flex;
+            align-items: center;
+            min-height: calc(100% - (0.5rem * 2));
+        }
+
+        @media (min-width: 576px) {
+            .modal-dialog {
+                text-align: center;
+                justify-content: center;
+                max-width: 800px;
+                margin: 30px auto;
+            }
+
+            .modal-dialog-centered {
+                min-height: calc(100% - (30px * 2));
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="hero_area">
+        <header class="header_section">
+            <div class="container-fluid">
+                <nav class="navbar navbar-expand-lg custom_nav-container">
+                    <a class="navbar-brand" style="color: tomato;" href="index.html">
+                        <i class="fas fa-home d-none d-md-inline-block"
+                            style="font-size: 35px; position: relative; bottom: 2px;"></i>
+                        <span class="ml-3 mr-2">Tapizados Full</span>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fas fa-bars text-white fa-2x"></i> <!-- Ícono de menú añadido aquí -->
+                  </button>
+                
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
+                            <ul class="navbar-nav ml-auto">
+                                <li class="nav-item"><a class="nav-link" href="galery.html">Galería</a></li>
+                                <li class="nav-item"><a class="nav-link" href="about.html">Sobre Nosotros</a></li>
+                                <li class="nav-item"><a class="nav-link" href="contact.html">Contácto</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <section class="index_section position-relative py-5">
+            <div class="container-fluid">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-10 col-lg-8 text-center">
+                        <div class="detail-box">
+                            <h5 class="title-profesional">
+                                Servicio Profesional de Limpieza de Tapizados.
+                            </h5>
+                            <h2 class="text-center d-none d-md-block" style="font-size: 40px;">Restauración Completa de
+                                Tapizados.</h2>
+                            <p class="d-none d-md-block" style="color: white; margin-top: 50px; letter-spacing: 2px;">
+                                Revive tus Tapizados con nuestro servicio profesional: limpieza profunda, eliminación de
+                                manchas y malos olores.
+                            </p>
+                            <p style="letter-spacing: 2px;">
+                                <span style="color: #ff6f00;">¡Limpieza garantizada!</span> Contáctanos y transforma tus
+                                espacios hoy mismo.
+                            </p>
+                            <div class="btn-box text-center mt-4">
+                                <a href="contact.html" class="btn btn-primary btn-lg">Contáctanos</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="index_services_section position-relative text-center py-5">
+            <div class="container">
+                <h2 class="text-center" style="color: white; font-weight: bold; font-size: 40px; margin-bottom: 25px;">
+                    ¿Por qué elegirnos?</h2>
+                <div class="row justify-content-center">
+                    <div class="col-lg-3 col-md-6 col-12 d-flex flex-column align-items-center mb-4">
+                        <div class="index_service_box text-center" data-toggle="modal" data-target="#modalEquipos">
+                            <div class="index_service_icon_box">
+                                <i class="fas fa-spray-can fa-4x"></i>
+                            </div>
+                            <div class="index_service_detail_box">
+                                <h5>Equipos de calidad</h5>
+                                <p class="mt-4 mb-5">Utilizamos equipos profesionales para una limpieza profunda y
+                                    eficaz.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-12 d-flex flex-column align-items-center mb-4">
+                        <div class="index_service_box text-center" data-toggle="modal" data-target="#modalServicio">
+                            <div class="index_service_icon_box">
+                                <i class="fas fa-user fa-4x"></i>
+                            </div>
+                            <div class="index_service_detail_box">
+                                <h5>Servicio personalizado</h5>
+                                <p class="mt-4 mb-5">Nos adaptamos a tus necesidades para ofrecerte la mejor solución.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-12 d-flex flex-column align-items-center mb-4">
+                        <div class="index_service_box text-center" data-toggle="modal" data-target="#modalGarantia">
+                            <div class="index_service_icon_box">
+                                <i class="fas fa-soap fa-4x"></i>
+                            </div>
+                            <div class="index_service_detail_box">
+                                <h5>Limpieza garantizada</h5>
+                                <p class="mt-4 mb-5">Te aseguramos resultados visibles y satisfacción garantizada.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer_section">
+        <div class="container">
+            <p>&copy; AlmagroDev - Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <div class="modal fade" id="modalEquipos" role="dialog" aria-labelledby="modalEquiposLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content bg-dark text-white">
+                <button type="button" class="modal-close text-white" data-dismiss="modal" aria-label="Close"
+                    style="opacity: 1; font-size: 1.8rem; position: absolute; top: 10px; right: 10px; z-index: 10;">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+
+                <div class="modal-header border-secondary">
+                    <h5 class="modal-title" id="modalEquiposLabel">Equipos de calidad</h5>
+                </div>
+                <div class="modal-body">
+                    <p>Descubre por qué nuestros equipos marcan la diferencia:</p>
+                    <ul class="list-unstyled">
+                        <li>
+                            <i class="fas fa-check-double text-success mr-2"></i>
+                            <strong>Potencia y Eficacia:</strong> Limpieza profunda que elimina la suciedad incrustada.
+                        </li>
+                        <li>
+                            <i class="fas fa-shield-alt text-info mr-2"></i>
+                            <strong>Seguridad Garantizada:</strong> Productos hipoalergénicos y seguros para tu hogar.
+                        </li>
+                        <li>
+                            <i class="fas fa-leaf text-warning mr-2"></i>
+                            <strong>Compromiso Ecológico:</strong> Tecnologías y productos respetuosos con el ambiente.
+                        </li>
+                        <li>
+                            <i class="fas fa-tachometer-alt text-primary mr-2"></i>
+                            <strong>Rapidez y Precisión:</strong> Resultados impecables en menos tiempo.
+                        </li>
+                        <li>
+                            <i class="fas fa-wrench text-secondary mr-2"></i>
+                            <strong>Mantenimiento Óptimo:</strong> Cuidado que prolonga la vida de tus tapizados.
+                        </li>
+                    </ul>
+                    <hr class="border-secondary my-3">
+                    <p class="font-italic">Invertimos en la mejor tecnología para ofrecerte un servicio superior.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="modalServicio" role="dialog" aria-labelledby="modalServicioLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content bg-dark text-white">
+                <button type="button" class="modal-close text-white" data-dismiss="modal" aria-label="Close"
+                    style="opacity: 1; font-size: 1.8rem; position: absolute; top: 10px; right: 10px; z-index: 10;">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+
+                <div class="modal-header border-secondary">
+                    <h5 class="modal-title" id="modalServicioLabel">Servicio personalizado</h5>
+                </div>
+                <div class="modal-body">
+                    <p>Nuestro servicio se adapta completamente a ti:</p>
+                    <ul class="list-unstyled">
+                        <li>
+                            <i class="fas fa-handshake text-primary mr-2"></i>
+                            <strong>Atención Personalizada:</strong> Escuchamos tus requerimientos y preferencias.
+                        </li>
+                        <li>
+                            <i class="fas fa-ruler-combined text-info mr-2"></i>
+                            <strong>Análisis Detallado:</strong> Evaluamos el tipo de tejido y el estado de tus
+                            tapizados.
+                        </li>
+                        <li>
+                            <i class="fas fa-tools text-warning mr-2"></i>
+                            <strong>Soluciones a Medida:</strong> Seleccionamos las técnicas y productos más adecuados.
+                        </li>
+                        <li>
+                            <i class="fas fa-palette text-success mr-2"></i>
+                            <strong>Cuidado Específico:</strong> Tratamientos diferenciados según el material.
+                        </li>
+                        <li>
+                            <i class="fas fa-comments text-secondary mr-2"></i>
+                            <strong>Comunicación Constante:</strong> Te mantenemos informado en cada etapa del servicio.
+                        </li>
+                    </ul>
+                    <hr class="border-secondary my-3">
+                    <p class="font-italic">Porque tus tapizados son únicos, nuestro servicio también lo es.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalGarantia" role="dialog" aria-labelledby="modalGarantiaLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content bg-dark text-white">
+                <button type="button" class="modal-close text-white" data-dismiss="modal" aria-label="Close"
+                    style="opacity: 1; font-size: 1.8rem; position: absolute; top: 10px; right: 10px; z-index: 10;">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+
+                <div class="modal-header border-secondary">
+                    <h5 class="modal-title" id="modalGarantiaLabel">Limpieza garantizada</h5>
+                </div>
+                <div class="modal-body">
+                    <p>Tu tranquilidad es nuestra prioridad. Con nuestra garantía, te aseguramos:</p>
+                    <ul class="list-unstyled">
+                        <li>
+                            <i class="fas fa-shield-alt text-success mr-2"></i>
+                            <strong>Resultados Duraderos:</strong> Una limpieza que revitaliza tus tapizados por más
+                            tiempo.
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle text-primary mr-2"></i>
+                            <strong>Satisfacción Total:</strong> Si no quedas completamente satisfecho, ¡lo resolvemos!
+                        </li>
+                        <li>
+                            <i class="fas fa-hand-holding-heart text-warning mr-2"></i>
+                            <strong>Compromiso Firme:</strong> Trabajamos con dedicación para superar tus expectativas.
+                        </li>
+                        <li>
+                            <i class="fas fa-star text-info mr-2"></i>
+                            <strong>Calidad Superior:</strong> Utilizamos los mejores productos y técnicas del mercado.
+                        </li>
+                        <li>
+                            <i class="fas fa-smile-beam text-success mr-2"></i>
+                            <strong>Tu Confianza:</strong> Nuestro mayor logro es tu sonrisa al ver tus tapizados
+                            impecables.
+                        </li>
+                    </ul>
+                    <hr class="border-secondary my-3">
+                    <p class="font-italic">Porque creemos en la calidad de nuestro trabajo, tu satisfacción está
+                        garantizada.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Obtener todos los elementos que abren los modales (en tu caso, los divs con data-toggle)
+        const modalTriggers = document.querySelectorAll('[data-toggle="modal"]');
+
+        // Función para abrir el modal
+        function openModal(event) {
+            event.preventDefault();
+            const modalId = this.getAttribute('data-target');
+            const modal = document.querySelector(modalId);
+            modal.classList.add('active'); // Mostrar el modal
+        }
+
+        // Función para cerrar el modal
+        function closeModal(event) {
+            event.preventDefault();
+            const modal = this.closest('.modal');
+            modal.classList.remove('active'); // Ocultar el modal
+        }
+
+        // Agregar el evento para abrir los modales al hacer click en los triggers
+        modalTriggers.forEach(trigger => trigger.addEventListener('click', openModal));
+
+        // Agregar el evento para cerrar los modales al hacer click en el botón de cerrar
+        const closeButtons = document.querySelectorAll('.modal-close');
+        closeButtons.forEach(button => button.addEventListener('click', closeModal));
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
